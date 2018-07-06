@@ -1,0 +1,1 @@
+!function(n){n(document).ready(function(){n(".main-menu-open").click(function(){n(".main-menu-container").addClass("active")}),n(".main-menu-close").click(function(){n(".main-menu-container").removeClass("active")})})}(jQuery);

@@ -1,0 +1,13 @@
+.main-menu-container
+  position: fixed
+  top: 0
+  left: 100%
+  width: 500px
+  height: 100vh
+  max-width: 100%
+  background: $main-menu-background
+  padding: 2em 1em
+  transition: transform 150ms ease-out
+  color: $main-menu-color
+  &.active
+    transform: translateX(-100%)
