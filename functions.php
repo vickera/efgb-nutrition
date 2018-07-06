@@ -9,3 +9,8 @@ add_action('wp_enqueue_scripts', function(){
   // add any JS we need
   wp_enqueue_script('main', get_template_directory_uri().'/dist/main.js', ['jquery'], '', true);
 });
+
+//add our the menus to wordpress
+register_nav_menus([
+  'main-menu' => __( 'Main Menu' )
+]);

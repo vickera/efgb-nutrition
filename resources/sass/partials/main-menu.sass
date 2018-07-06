@@ -6,8 +6,29 @@
   height: 100vh
   max-width: 100%
   background: $main-menu-background
-  padding: 2em 1em
+  padding-top: 2em
   transition: transform 150ms ease-out
   color: $main-menu-color
+  box-shadow: 0 0 60px rgba(black,0.5)
+  border-left: $main-menu-left-border
+  font-size: 2em
+  font-weight: 900
+  color: black
   &.active
     transform: translateX(-100%)
+  
+  ul,
+  li
+    margin: 0
+    padding: 0  
+  
+  .menu-item
+    border-bottom: 1px solid black
+    &:nth-of-type(even)
+      background-color: $main-menu-background-even
+
+    
+  .sub-menu
+    background: light-gray
+    a
+      padding-left: 40px
