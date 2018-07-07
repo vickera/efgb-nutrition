@@ -1,12 +1,19 @@
-<?php  /* template name: home */
+<?php  
+/* template name: Home */
 
-get_header(); ?>
+$hero_image = get_field('hero_image')['url'];
+$hero_content = get_field('hero_content');
+
+get_header(); 
+
+?>
 
  
-  <div class="hero">
-    <h1 class="header-text">just do it</h1>
-    <button class="button">Click me</button>
+<div class="hero" style="background-image:url(<?php echo $hero_image; ?>)">
+  <div class="hero-content">
+    <?php echo apply_filters('the_content', $hero_content); ?>
   </div>
+</div>
 
 <div class="wrapper">
   <?php the_content(); ?>

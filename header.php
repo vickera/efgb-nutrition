@@ -12,10 +12,15 @@
   </head>
   <header>
     <div class='wrapper'>
-      <img class="site-logo" title="<?php echo bloginfo()['name']; ?>" src="<?php echo get_template_directory_uri(); ?>/images/logo-efgbnutrition.png">
+      <a href="<?php echo home_url(); ?>">
+        <img class="site-logo" title="<?php echo bloginfo()['name']; ?>" src="<?php echo get_template_directory_uri(); ?>/images/logo-efgbnutrition.png">
+      </a>
       <div class="utility-bar">
         <button class="main-menu-open"><span class='fa fa-bars'></span><span class="sr-only">MENU</span></button>
-        <button class="cart"><span class='fa fa-shopping-cart'></span><span class="sr-only">CART</span></button>
+        <a href="/cart"><button class="cart">
+          <span class='fa fa-shopping-cart'></span><span class="sr-only">CART</span>
+        </button></a>
+        <?php echo do_shortcode('[gtranslate]'); ?>
       </div>
       
       <!--<div class="search-container">
@@ -23,8 +28,9 @@
       </div>-->
 
       <div class="main-menu-container">
-        <div class="menu-item main-menu-close">&times;</div>
-        <div class="menu-item search">
+        <div class="main-menu-close">&times;</div>
+        <h1>MENU</h1>
+        <div class="search">
           <form>
             <input type="text" name="s" placeholder="Search...">
             <input type="submit" value="S">

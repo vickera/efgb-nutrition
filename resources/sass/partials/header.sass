@@ -1,5 +1,8 @@
 header
   border-bottom: $header-bottom-border
+  background-image: $header-background
+  background-position: center
+  background-size: cover
   padding: 1em
   
   .wrapper
@@ -9,9 +12,26 @@ header
     justify-content: space-between
     
   .site-logo
-    width: 200px
+    width: 92px
     height: auto
     
   .site-search
     display: none
     width: 100%
+    
+  .utility-bar
+    display: flex
+    align-items: center
+    button
+      appearance: none
+      border: none
+      font-size: 2em
+      background: transparent
+      cursor: pointer
+      outline: none
+      &:hover
+        color: $button-hover-color
+    .glink
+      margin: 0 5px
+      &:last-of-type
+        margin-right: 0

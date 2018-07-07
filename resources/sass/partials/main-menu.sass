@@ -1,34 +1,92 @@
 .main-menu-container
   position: fixed
   top: 0
-  left: 100%
-  width: 500px
+  left: calc(100% + 100px)
   height: 100vh
   max-width: 100%
   background: $main-menu-background
-  padding-top: 2em
-  transition: transform 150ms ease-out
+  transition: all 150ms ease-out
   color: $main-menu-color
   box-shadow: 0 0 60px rgba(black,0.5)
   border-left: $main-menu-left-border
-  font-size: 2em
   font-weight: 900
   color: black
+  z-index: 99
+  width: 310px
   &.active
+    left: 100%
     transform: translateX(-100%)
+  
+  h1
+    text-align: center
   
   ul,
   li
     margin: 0
     padding: 0  
+    list-style: none
   
   .menu-item
     border-bottom: 1px solid black
-    &:nth-of-type(even)
-      background-color: $main-menu-background-even
-
-    
-  .sub-menu
-    background: light-gray
+    &.menu-item-has-children
+      border-bottom: 0
+      position: relative
+      &:after
+        content: ''
+        display: inline-block
+        width: 12px
+        height: 12px
+        border-top: 2px solid black
+        border-right: 2px solid black
+        transform: rotate(135deg)
+        position: absolute
+        top: 1em
+        right: 1em
+      
     a
-      padding-left: 40px
+      padding: 1em
+      display: inline-block
+      color: $main-menu-link-color
+      text-decoration: none
+      &:hover
+        color: $main-menu-link-hover
+
+  .sub-menu
+    border-top: 1px solid black
+    background: $sub-menu-background
+    a
+      padding-left: 2em
+      
+  form
+    display: flex
+    margin: 0
+    position: relative
+    border-bottom: 1px solid black
+    input[type=text]
+      border: 0
+      padding: 1em
+      flex: 1
+    input[type=submit]
+      position: absolute
+      right: 0.5em
+      top: 0.5em
+      opacity: 0
+      cursor: pointer
+    .fa-search
+      padding: 0.5em
+      font-size: 1.3em
+    
+.main-menu-close
+    position: absolute
+    right: 100%
+    font-size: 4em
+    background: black
+    color: white
+    height: 52px
+    line-height: 0.7
+    width: 52px
+    text-align: center
+    top: 94px
+    cursor: pointer
+    &:hover
+      color: $button-hover-color
