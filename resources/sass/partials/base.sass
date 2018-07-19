@@ -3,14 +3,43 @@
     
 body
     font-family: $font-main
+    overflow-x: hidden
 
 img
     max-width: 100%
+    height: auto
 
 h1
     font-weight: 900
+    text-transform: uppercase
+    line-height: 0.8
+    @include fluid-text(32, 320, 100, 1000)
+    margin: 0
+    text-shadow: 2px 5px 7px lightgrey
+    
+h2
+    @include fluid-text(24, 320, 72, 1000)
+    font-weight: 900
+    text-transform: uppercase
+    line-height: 0.8
+    margin: 0
+
+hr
+    border: 0
+    height: 12px
+    background: black
 
 .wrapper
     width: 1000px
     max-width: 90%
     margin: 0 auto
+    &-small
+        width: 800px
+    
+.text-center
+    text-align: center
+    
+.col-xxs-12
+    @media(max-width:500px)
+        flex-basis: 100%
+        max-width: 100%

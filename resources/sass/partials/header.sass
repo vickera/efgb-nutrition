@@ -3,17 +3,22 @@ header
   background-image: $header-background
   background-position: center
   background-size: cover
-  padding: 1em
+  padding: 0.5em 0
+  box-shadow: 2px 0 5px rgba(0,0,0,0.25)  
   
   .wrapper
-    display: flex
-    flex-wrap: wrap
-    align-items: flex-end
-    justify-content: space-between
+    // display: flex
+    // flex-wrap: wrap
+    // align-items: flex-end
+    // justify-content: space-between
     
   .site-logo
-    width: 92px
+    width: 50%
     height: auto
+    display: block
+    margin: 0 auto
+    @media(max-width:$mobile-switch)
+      width: 100%
     
   .site-search
     display: none
@@ -22,12 +27,26 @@ header
   .utility-bar
     display: flex
     align-items: center
+    width: 100%
+    justify-content: flex-end   
+    overflow: hidden
+    &.sticky
+      position: fixed
+      left: 0 
+      width: 100%
+      top: 0
+      background: white
+      z-index: 99
+      box-shadow: 4px 0 10px rgba(black, 0.35)
+      .sticky-logo
+        transform: translateY(0)
     button
       appearance: none
       border: none
       font-size: 2em
       background: transparent
       cursor: pointer
+      transition: all 250ms ease-in
       outline: none
       &:hover
         color: $button-hover-color
@@ -35,3 +54,10 @@ header
       margin: 0 5px
       &:last-of-type
         margin-right: 0
+    .sticky-logo
+      display: inline-block
+      transform: translateY(-100%)
+      transition: all 150ms ease-out
+      width: 88px
+      height: auto
+      margin-right: 10px

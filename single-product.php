@@ -1,15 +1,15 @@
 <body>
   <?php get_header(); ?>
+  <br>
+  <br>
   <div class="wrapper">
+    <h1 class="text-center"><?php the_title(); ?></h1>
+  </div>
+  <div class="wrapper wrapper-small">
     <br><br>
-    <h2>Recent Articles</h2>
-    <hr>
-    <br>
-    <div class="posts-container row">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <?php echo get_template_part('templates/post-thumbnail'); ?>
+        <div class="content-editor"><?php the_content(); ?></div>
       <?php endwhile; endif; ?>
-    </div>
     <br><br>
     <?php pagination_bar(); ?>
   </div>

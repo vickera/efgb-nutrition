@@ -1,0 +1,49 @@
+.repeating-blocks
+  margin-bottom: 2em
+  .block
+    display: flex
+    align-items: stretch
+    overflow: hidden
+    @media(max-width:$mobile-switch)
+      display: block
+      & > * 
+        width: 100% !important
+    &:nth-of-type(odd)
+      background: #efefef
+      .block-info
+        order: 2
+      .block-content
+        order: 1
+  .block-info
+    background: black
+    color: white
+    width: 50%
+    padding: 2em 0
+    position: relative
+    text-align: center
+    .wrapper
+      position: relative
+    .image-container
+      width: 80px
+      height: 80px
+      border-radius: 50%
+      background: $repeating-sections-icon-color
+      display: inline-block
+      margin-bottom: 10px
+      img
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0.25
+    h2
+      position: relative
+      z-index: 1
+      text-shadow: 0px 2px 6px rgba(black, 0.5)
+    img
+      max-width: 80%
+      height: auto
+  .block-content
+    width: 50%
+    padding: 2em 0
+    min-height: 100%

@@ -1,0 +1,29 @@
+// This adds a column gap when using flexboxgrid
+@mixin colGap ($width)
+    margin: 0 -#{$width/2}px
+    .col
+        padding: 0  #{$width/2}px
+        margin-bottom: #{$width}px
+
+@mixin fluid-text($font-min, $viewport-min, $font-max, $viewport-max)
+  $vmin-val  : ($viewport-min / ($viewport-min * 0 + 1)) / 18
+  $vmax-val  : ($viewport-max / ($viewport-max * 0 + 1)) / 18
+  $fmin-val  : ($font-min / ($font-min * 0 + 1)) / 18
+  $fmax-val  : ($font-max / ($font-max * 0 + 1)) / 18
+
+  font-size: rem($font-min)
+  
+  @media (min-width: em($viewport-min)) and (max-width: em($viewport-max))
+    font-size: calc(#{rem($font-min)} + (#{$fmax-val} - #{$fmin-val}) * (100vw - #{rem($viewport-min)}) / (#{$vmax-val} - #{$vmin-val}))              
+  @media (min-width: em($viewport-max))
+    font-size: rem($font-max)
+    
+@function em($target, $parent: 16px)
+  $targetVal : $target / ($target * 0 + 1)
+  $parentVal : $parent / ($parent * 0 + 1)
+  @return #{($targetVal / $parentVal)}em
+  
+@function rem($px)
+  $pxBase : 16
+  $pxVal : $px / ($px * 0 + 1)
+  @return #{($pxVal / $pxBase)}rem

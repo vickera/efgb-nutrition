@@ -1,0 +1,55 @@
+.block-section
+  padding: 2em 0
+  position: relative
+  
+.block-section-callouts
+  .row
+    @include colGap(10)
+  .col
+    text-align: center
+    .col-content
+      text-align: center
+    .image-container
+      border-radius: 50%
+      background-color: $block-section-callout-icon-background
+      width: 120px
+      height: 120px
+      position: relative
+      margin: 0 auto
+    img
+      max-height: 100px
+      max-width: 100px
+      height: auto
+      width: auto
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+
+.block-section-image-content
+  padding: 0
+  background: black
+  color: white
+  .image-container
+    background-size: cover
+    background-position: center
+    position: absolute
+    width: 50%
+    height: 100%
+    @media(max-width:$mobile-switch)
+      height: 300px
+      position: static
+      width: 100%
+  .wrapper
+    padding: 8em 0
+    text-align: center
+    @media(max-width:$mobile-switch)
+      padding: 2em 0 !important
+  &.image-left
+    .wrapper
+      padding-left: 50%
+  &.image-right
+    .image-container
+      right: 0
+    .wrapper
+      padding-right: 50%
